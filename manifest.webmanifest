@@ -1,0 +1,26 @@
+{
+  "id": "/-Tijara_Pro-/",
+  "name": "Tijara Pro - إدارة المحل",
+  "short_name": "Tijara Pro",
+  "description": "برنامج إدارة المحل والمخزون والمبيعات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/-Tijara_Pro-/",
+  "scope": "/-Tijara_Pro-/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f7fb",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/-Tijara_Pro-/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/-Tijara_Pro-/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
