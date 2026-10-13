@@ -12,29 +12,33 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
       - name: Install Bubblewrap CLI
         run: npm install -g @bubblewrap/cli
 
-      - name: Generate Android Project & APK
+      - name: Initialize Project
         run: |
-          npx @bubblewrap/cli init --manifest=https://mohamadlminouadah-cell.github.io/-Tijara_Pro-/manifest.webmanifest
+          npx @bubblewrap/cli init --manifest=https://mohamadlminouadah-cell.github.io/-Tijara_Pro-/manifest.webmanifest --directory=android-project
+
+      - name: Build APK
+        run: |
+          cd android-project
           npx @bubblewrap/cli build
 
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Tijara-Pro-APK
-          path: ./*.apk
+          path: ./android-project/*.apk
