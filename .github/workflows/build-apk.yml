@@ -28,17 +28,13 @@ jobs:
       - name: Install Bubblewrap CLI
         run: npm install -g @bubblewrap/cli
 
-      - name: Initialize Project
+      - name: Initialize and Build APK
         run: |
-          npx @bubblewrap/cli init --manifest=https://mohamadlminouadah-cell.github.io/-Tijara_Pro-/manifest.webmanifest --directory=android-project
-
-      - name: Build APK
-        run: |
-          cd android-project
+          yes "" | npx @bubblewrap/cli init --manifest=https://mohamadlminouadah-cell.github.io/-Tijara_Pro-/manifest.webmanifest
           npx @bubblewrap/cli build
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Tijara-Pro-APK
-          path: ./android-project/*.apk
+          path: ./*.apk
