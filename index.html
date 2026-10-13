@@ -609,5 +609,14 @@ langObserver.observe(document.body,{childList:true,subtree:true,characterData:tr
 ensureArrays();migratePins();
 authGate();apply();renderNav();render();setTimeout(()=>{if(current==='products')renderProductTable()},0);
 setTimeout(()=>applyLanguage(db.settings.language||'ar'),0);
+</script><script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/-Tijara_Pro-/service-worker.js')
+        .then((reg) => console.log('Service Worker registered!', reg.scope))
+        .catch((err) => console.log('Service Worker failed:', err));
+    });
+  }
 </script>
+
 </body></html>
